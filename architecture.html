@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architecture | Skill Core Labs</title>
+  <meta name="description" content="The Skill Core architecture records AI claims, evidence, authority, context, outcomes, validation, trust updates, and failure semantics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="skillcore-v2.css">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="site-shell nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">SC</span><span>Skill Core Labs</span></a>
+      <div class="nav-links"><a href="index.html">Home</a><a aria-current="page" href="architecture.html">Architecture</a><a href="products.html">Products</a><a href="pilot.html">Pilot</a><a href="index-focused.html">Focused</a></div>
+      <a class="cta" href="pilot.html">Request pilot</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero compact">
+      <canvas class="harmonic-field" data-domain="2" aria-hidden="true" tabindex="-1"></canvas>
+      <div class="hero-grid">
+        <div class="hero-copy-grid">
+          <p class="eyebrow intro d1">Architecture · audit record</p>
+          <h1 class="intro d2">A spine for accountable AI.</h1>
+          <p class="thesis intro d3">The output is not the record. The record is what lets the output be judged.</p>
+          <p class="lede intro d4">Skill Core captures the claim, binds the evidence, preserves the authority boundary, observes the outcome stream, and updates trust when reality answers back.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="eyebrow">Pattern language</p>
+          <h2 class="head">Eight fields, one audit-readable event.</h2>
+          <p class="body-col">The architecture is AI-native but not AI-limited. Once a claim has evidence, context, authority, and an outcome trail, it can be scored wherever reality later supplies a verdict.</p>
+        </div>
+        <ol class="record reveal">
+          <li class="rec"><span class="idx">01</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Claim</div><p class="desc">The model answer, agent action, decision, prediction, or recommendation.</p></div><span class="tag">asserted</span></li>
+          <li class="rec"><span class="idx">02</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Evidence</div><p class="desc">Sources, observations, retrieved context, data, tool calls, and reasoning traces.</p></div><span class="tag">bound</span></li>
+          <li class="rec"><span class="idx">03</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Authority boundary</div><p class="desc">Role, permission, policy, escalation, and the point where review becomes mandatory.</p></div><span class="tag">scope</span></li>
+          <li class="rec"><span class="idx">04</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Context</div><p class="desc">Model, version, source set, date, prompt state, environment, and operating conditions.</p></div><span class="tag">context</span></li>
+          <li class="rec"><span class="idx">05</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Outcome stream</div><p class="desc">The later measurements and events that make the original claim checkable.</p></div><span class="tag">observed</span></li>
+          <li class="rec"><span class="idx">06</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Reality validation</div><p class="desc">The comparison between what the AI claimed and what actually happened.</p></div><span class="tag">resolved</span></li>
+          <li class="rec"><span class="idx">07</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Trust update</div><p class="desc">The change in model, source, or workflow weight after evidence meets reality.</p></div><span class="tag">learned</span></li>
+          <li class="rec"><span class="idx">08</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Failure semantics</div><p class="desc">The explicit reason a claim failed, exceeded scope, degraded, or lost support.</p></div><span class="tag">typed</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="site-shell footer-grid"><span>Architecture</span><span>Claim, evidence, authority, context, outcome, validation, trust, failure.</span></div></footer>
+  <script src="skillcore-field.js"></script>
+</body>
+</html>
