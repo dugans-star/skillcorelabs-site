@@ -6,9 +6,7 @@
     { key: "AI", label: "AI", freq: 1.6, rich: 0.55, amp: 1.0, warmth: 0.16 },
     { key: "MARKETS", label: "Markets", freq: 3.2, rich: 0.65, amp: 0.92, warmth: 0.96 },
     { key: "SCIENCE", label: "Science", freq: 1.9, rich: 0.4, amp: 0.82, warmth: 0.05 },
-    { key: "ART", label: "Art", freq: 1.05, rich: 0.85, amp: 1.28, warmth: 0.72 },
-    { key: "MUSIC", label: "Music", freq: 2.4, rich: 0.95, amp: 1.16, warmth: 0.52 },
-    { key: "CULTURE", label: "Culture", freq: 1.35, rich: 1.0, amp: 1.32, warmth: 0.34 }
+    { key: "CREATIVE", label: "Creative", freq: 1.35, rich: 0.92, amp: 1.22, warmth: 0.62 }
   ];
 
   var root = document.documentElement;
