@@ -439,6 +439,42 @@ h1 {
 .claim-board-solo::before {
   opacity: 0.12;
 }
+
+.claim-board-open {
+  grid-template-columns: minmax(18rem, 1fr) minmax(0, 45rem);
+  align-items: stretch;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.claim-board-open::before,
+.claim-board-open::after {
+  opacity: 0;
+}
+
+.claim-wordmark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(32rem, 52vw, 48rem);
+  padding: clamp(1.2rem, 2.7vw, 2.1rem);
+  color: var(--paper-hot);
+  font-family: var(--display);
+  font-size: 8.1rem;
+  font-weight: 830;
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125, "wght" 830;
+  line-height: 0.68;
+  text-transform: uppercase;
+  text-shadow: 0 2px 26px rgba(0,0,0,0.42);
+}
+
+.claim-wordmark span {
+  display: block;
+}
 .claim-board::before,
 .proof-board::before {
   content: "";
@@ -1033,7 +1069,13 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
 @media (max-width: 1120px) {
   .claim-board,
   .proof-board { grid-template-columns: 1fr; }
+  .claim-board-open { grid-template-columns: 1fr; }
   .claim-stack { grid-template-rows: auto; }
+  .claim-wordmark {
+    min-height: auto;
+    padding-block: 2rem 1rem;
+    font-size: 7.2rem;
+  }
   .claim-poster,
   .proof-poster { min-height: 32rem; }
   .claim-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1055,6 +1097,7 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
   .hero { min-height: auto; padding-top: 7rem; }
   .hero.compact { min-height: auto; }
   .hero-title { font-size: 3.9rem; }
+  .claim-wordmark { font-size: 5.4rem; }
   h2,
   .head { font-size: 3.6rem; }
   .ttl,
@@ -1093,6 +1136,10 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
   .poster-grid { inset: 0.8rem; }
   .poster-title { font-size: 4.7rem; }
   .poster-title-labs { font-size: 4.1rem; }
+  .claim-wordmark {
+    padding: 1rem;
+    font-size: 4.1rem;
+  }
   .poster-stamp { left: 1rem; right: 1rem; min-width: 0; }
   .hword { font-size: 4.9rem; }
   h1 { font-size: 3.7rem; }
