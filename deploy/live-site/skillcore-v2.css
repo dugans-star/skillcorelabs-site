@@ -93,6 +93,13 @@ button { font: inherit; }
   padding-inline: var(--pad);
 }
 
+main,
+.footer,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
 .topbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -271,11 +278,12 @@ button { font: inherit; }
 .page-field {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
-  opacity: 0.9;
+  opacity: 0.82;
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 .hud {
