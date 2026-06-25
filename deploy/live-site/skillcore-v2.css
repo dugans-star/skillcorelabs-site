@@ -501,6 +501,23 @@ section,
   padding-block: var(--sec);
 }
 
+.band {
+  isolation: isolate;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 var(--pad);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.16;
+  background:
+    linear-gradient(90deg, rgba(247,241,244,0.32) 0 1px, transparent 1px) 0 0 / 20% 100%,
+    linear-gradient(180deg, rgba(247,241,244,0.24) 0 1px, transparent 1px) 0 0 / 100% 8.5rem;
+  mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent);
+}
+
 .hr-horizon {
   height: 1px;
   border: 0;
@@ -565,6 +582,15 @@ p,
   transition: padding 0.3s ease, background 0.3s ease;
 }
 
+.dom,
+.rec,
+.record-row,
+.prow {
+  background:
+    linear-gradient(90deg, rgba(247,241,244,0.06) 0 1px, transparent 1px) 0 0 / 25% 100%,
+    rgba(0,0,0,0.18);
+}
+
 .dname {
   color: var(--paper);
   font-family: var(--display);
@@ -592,6 +618,10 @@ p,
 
 .creative-proof {
   padding-top: calc(var(--sec) * 0.8);
+}
+
+.creative-head .head {
+  max-width: 14.5ch;
 }
 
 .proof-board {
@@ -797,6 +827,13 @@ p,
 
 .record,
 .prod {
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background: rgba(0,0,0,0.25);
+}
+
+.record,
+.prod {
   list-style: none;
   padding: 0;
 }
@@ -812,6 +849,11 @@ p,
   padding: 1.55rem 0;
   border-bottom: 1px solid var(--line);
   transition: background 0.25s ease, padding 0.25s ease;
+}
+
+.rec,
+.prow {
+  padding-inline: 1rem;
 }
 
 .record-row {
@@ -918,6 +960,8 @@ p,
   padding: clamp(1.5rem, 3vw, 2.2rem);
   border: 1px solid var(--line);
   background:
+    linear-gradient(90deg, rgba(247,241,244,0.08) 0 1px, transparent 1px) 0 0 / 33.333% 100%,
+    linear-gradient(180deg, rgba(247,241,244,0.08) 0 1px, transparent 1px) 0 0 / 100% 33.333%,
     radial-gradient(90% 120% at 100% 0%, rgba(var(--gold-rgb), 0.1), transparent 55%),
     linear-gradient(165deg, rgba(13, 9, 12, 0.76), rgba(0, 0, 0, 0.9));
 }
