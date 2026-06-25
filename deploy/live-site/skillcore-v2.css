@@ -431,8 +431,9 @@ h1 {
   max-width: 100%;
   margin-left: auto;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01) 42%, rgba(0,0,0,0.16)),
-    rgba(8,8,8,0.08);
+    linear-gradient(135deg, rgba(255,255,255,0.025), rgba(255,255,255,0.006) 42%, rgba(0,0,0,0.08)),
+    rgba(8,8,8,0.035);
+  border-color: rgba(255,255,255,0.12);
 }
 
 .claim-board-solo::before {
@@ -781,29 +782,35 @@ p,
 .doms { margin-top: 3rem; border-top: 1px solid var(--line); }
 .dom {
   display: grid;
-  grid-template-columns: minmax(7rem, 16rem) 1fr;
-  gap: 1.6rem;
-  align-items: baseline;
-  padding: 1.7rem 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 2rem 1.1rem 2.15rem;
   border-bottom: 1px solid var(--line);
   background:
-    linear-gradient(90deg, rgba(255,255,255,0.07) 0 1px, transparent 1px) 0 0 / 25% 100%,
-    rgba(0,0,0,0.22);
+    linear-gradient(90deg, rgba(255,255,255,0.045) 0 1px, transparent 1px) 0 0 / 25% 100%,
+    rgba(0,0,0,0.1);
   transition: padding 0.25s ease, background 0.25s ease;
 }
 .dname {
   color: var(--paper);
   font-family: var(--display);
-  font-size: 3.5rem;
+  font-size: 3.15rem;
   font-weight: 780;
-  line-height: 0.82;
+  line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
   font-stretch: 122%;
   font-variation-settings: "wdth" 122, "wght" 780;
   transition: color 0.25s ease;
 }
-.dtext { color: var(--muted); font-size: 1.01rem; }
+.dtext {
+  max-width: 66ch;
+  color: rgba(247,247,242,0.78);
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+.dtext b { color: var(--paper-hot); }
 .dom:hover { padding-left: 1.4rem; background: linear-gradient(to right, rgba(255,255,255,0.06), transparent 55%); }
 .dom:hover .dname { color: var(--accent); }
 
