@@ -32,10 +32,10 @@
 
   function setupField(canvas, domainIndex) {
     var ctx = canvas.getContext("2d", { alpha: true });
-    var GOLD = "215,171,197";
+    var GOLD = "196,255,52";
     var INK = "8,8,10";
-    var COOLW = [212, 216, 226];
-    var GOLDP = [215, 171, 197];
+    var COOLW = [120, 150, 70];
+    var GOLDP = [196, 255, 52];
     var W = 0;
     var H = 0;
     var DPR = 1;
@@ -131,7 +131,7 @@
 
       ctx.globalCompositeOperation = "lighter";
       var rg = ctx.createRadialGradient(xH || W * 0.55, H * 0.5, 0, xH || W * 0.55, H * 0.5, band * 1.6);
-      rg.addColorStop(0, colStr(0.05));
+      rg.addColorStop(0, colStr(0.12));
       rg.addColorStop(1, colStr(0));
       ctx.fillStyle = rg;
       ctx.fillRect((xH || W * 0.55) - band * 1.6, 0, band * 3.2, H);
@@ -147,8 +147,8 @@
           if (s === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = colStr(0.035 + 0.105 * env * (0.6 + 0.4 * d));
-        ctx.lineWidth = 0.8 + 1.0 * env * (0.5 + 0.5 * d);
+        ctx.strokeStyle = colStr(0.06 + 0.22 * env * (0.6 + 0.4 * d));
+        ctx.lineWidth = 0.9 + 1.3 * env * (0.5 + 0.5 * d);
         ctx.stroke();
       }
 
@@ -160,7 +160,7 @@
           q.y += Math.sin(q.ph) * 0.22;
           if (q.x > W + 8) { q.x = -8; q.y = rnd(0, H); }
         }
-        ctx.fillStyle = colStr(q.a * 0.45);
+        ctx.fillStyle = colStr(q.a * 0.7);
         ctx.beginPath();
         ctx.arc(q.x, q.y, 1.1, 0, 6.2832);
         ctx.fill();

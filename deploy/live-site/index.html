@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="skillcore-v2.css">
 </head>
 <body>
+  <canvas id="field" class="harmonic-field page-field" data-domain="3" aria-hidden="true" tabindex="-1"></canvas>
   <header class="topbar">
     <nav class="site-shell nav" aria-label="Primary navigation">
       <a class="brand" href="index.html"><span class="brand-mark">SC</span><span>Skill Core Labs</span></a>
@@ -32,30 +33,53 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <canvas id="field" class="harmonic-field" data-domain="0" aria-hidden="true" tabindex="-1"></canvas>
+    <section class="hero hero-claim-board">
       <div class="hud" aria-hidden="true">
-        <div>RESONANCE · <b>live</b></div>
+        <div>CLAIM FIELD · <b>live</b></div>
         <div id="hud-line">DOMAIN AI · f 1.60 · HARM 6 · RESOLVED 0 · HORIZON 0.00</div>
       </div>
       <div class="hero-grid">
-        <div class="hero-copy-grid">
-          <p class="eyebrow intro d1">Evidence infrastructure · AI first</p>
-          <p class="hero-lead intro d2">The evidence layer for</p>
-          <span class="sr-only">Skill Core Labs is evidence infrastructure for AI systems, built to generalize across markets, science, and creative domains.</span>
-          <div class="hwrap intro d2" id="hwrap"><span class="hword" id="hword">AI</span></div>
-          <p class="thesis intro d3">Every AI output makes a claim. <span class="gold">Reality decides</span> what it was worth.</p>
-          <p class="lede intro d4">Skill Core records what an AI system said, what evidence it used, where its authority ended, and what happened after someone acted on it. The same record can score claims in markets, science, and creative domains, but AI is where the infrastructure starts.</p>
-          <div class="chips intro d5" id="chips" role="group" aria-label="Choose a proof domain"></div>
-          <div class="cta-row intro d5">
-            <a class="btn" href="pilot.html">Request pilot</a>
-            <a class="btn btn-ghost" href="architecture.html">View architecture <span class="arr">→</span></a>
+        <div class="claim-board intro d2" aria-label="Skill Core claim field overview">
+          <div class="claim-poster" aria-hidden="true">
+            <div class="poster-grid"><span></span><span></span><span></span><span></span></div>
+            <div class="poster-top">
+              <span>WORK IN PROGRESS</span>
+              <span>[AI FIRST]</span>
+              <span>CLAIM FIELD 2026</span>
+            </div>
+            <div class="poster-title">Skill<br>Core</div>
+            <div class="poster-copy">Claim, evidence, authority, outcome, and trust update become records instead of vibes.</div>
+            <div class="poster-stamp">Reality decides ↓</div>
           </div>
-          <div class="legend intro d6">
-            <div class="cell"><span class="k">Claims</span><span class="v"><span class="dot"></span>Recorded</span></div>
-            <div class="cell"><span class="k">Evidence</span><span class="v"><span class="dot"></span>Bound</span></div>
-            <div class="cell"><span class="k">Authority</span><span class="v"><span class="dot"></span>Scoped</span></div>
-            <div class="cell"><span class="k">Outcomes</span><span class="v"><span class="dot"></span>Checked</span></div>
+
+          <div class="claim-stack">
+            <div class="claim-intro">
+              <p class="eyebrow intro d1">Evidence infrastructure · AI first</p>
+              <h1 class="hero-title">Every AI output is a claim.</h1>
+              <p class="thesis intro d3"><span class="gold">Reality decides</span> what it was worth.</p>
+              <p class="lede intro d4">Skill Core records what an AI system said, what evidence it used, where its authority ended, and what happened after someone acted on it.</p>
+              <div class="cta-row intro d5">
+                <a class="btn" href="pilot.html">Request pilot</a>
+                <a class="btn btn-ghost" href="architecture.html">View architecture <span class="arr">→</span></a>
+              </div>
+            </div>
+            <div class="claim-cards">
+              <article class="claim-card">
+                <span class="proof-index">01</span>
+                <h2>AI</h2>
+                <p>A model answer, agent action, recommendation, or tool call becomes an audit-readable event.</p>
+              </article>
+              <article class="claim-card">
+                <span class="proof-index">02</span>
+                <h2>Markets</h2>
+                <p>A signal or trade thesis can be scored against realized outcome, timing, and drawdown.</p>
+              </article>
+              <article class="claim-card">
+                <span class="proof-index">03</span>
+                <h2>Science</h2>
+                <p>A hypothesis can be tied to methods, sources, replication attempts, and later evidence.</p>
+              </article>
+            </div>
           </div>
         </div>
       </div>
