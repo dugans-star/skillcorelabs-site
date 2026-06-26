@@ -479,8 +479,9 @@ h1 {
   display: block;
 }
 
-.claim-wordmark span:last-child {
+.claim-board-open .claim-wordmark span:last-child {
   color: var(--acid);
+  text-shadow: 0 0 22px rgba(var(--accent-rgb),0.18), 0 2px 26px rgba(0,0,0,0.42);
 }
 .claim-board::before,
 .proof-board::before {
@@ -672,6 +673,11 @@ h1 {
     linear-gradient(180deg, rgba(255,255,255,0.1) 0 1px, transparent 1px) 0 0 / 100% 50%,
     rgba(4,4,4,0.55);
 }
+
+.claim-board-open .claim-card {
+  background: rgba(4,4,4,0.34);
+}
+
 .proof-index {
   display: block;
   margin-bottom: 0.65rem;
