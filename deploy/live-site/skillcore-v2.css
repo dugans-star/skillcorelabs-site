@@ -444,8 +444,11 @@ h1 {
   grid-template-columns: minmax(18rem, 1fr) minmax(0, 45rem);
   align-items: stretch;
   background: transparent;
+  border: 0;
   border-color: transparent;
+  border-radius: 0;
   box-shadow: none;
+  overflow: visible;
 }
 
 .claim-board-open::before,
@@ -474,6 +477,10 @@ h1 {
 
 .claim-wordmark span {
   display: block;
+}
+
+.claim-wordmark span:last-child {
+  color: var(--acid);
 }
 .claim-board::before,
 .proof-board::before {
@@ -645,11 +652,8 @@ h1 {
 .claim-intro {
   min-height: 14rem;
   padding: clamp(1rem, 1.8vw, 1.45rem);
-  border: 1px solid rgba(255,255,255,0.18);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.1) 0 1px, transparent 1px) 0 0 / 50% 100%,
-    linear-gradient(180deg, rgba(255,255,255,0.09) 0 1px, transparent 1px) 0 0 / 100% 50%,
-    rgba(5,5,5,0.5);
+  border: 0;
+  background: transparent;
 }
 .claim-intro .eyebrow { margin-bottom: 0.9rem; }
 .claim-intro .lede { margin-bottom: 1.2rem; }
