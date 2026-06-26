@@ -682,17 +682,17 @@ h1 {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 0.08em;
+  gap: 0.01em;
   margin: 0;
   font-family: var(--display);
   text-transform: uppercase;
-  line-height: 0.8;
+  line-height: 0.76;
 }
 
 .wordmark span {
   display: block;
   color: var(--paper-hot);
-  font-size: clamp(4.2rem, 7.2vw, 8.6rem);
+  font-size: clamp(3.6rem, 11.5vw, 11rem);
   font-weight: 820;
   font-stretch: 125%;
   font-variation-settings: "wdth" 125, "wght" 820;
@@ -708,8 +708,8 @@ h1 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(20rem, 0.86fr) minmax(0, 1fr);
-  gap: clamp(2.5rem, 6vw, 6rem);
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
   padding: 0;
   border: 0;
@@ -725,19 +725,19 @@ h1 {
 }
 
 .hero-claim-board .claim-stack {
-  max-width: 48rem;
+  max-width: 45rem;
   margin-left: auto;
 }
 
 .hero-claim-board .hero-title {
-  max-width: 12ch;
-  font-size: clamp(3.8rem, 5.4vw, 6.2rem);
-  line-height: 0.86;
+  max-width: 11ch;
+  font-size: clamp(3.6rem, 4.8vw, 5.6rem);
+  line-height: 0.82;
 }
 
 .hero-claim-board .thesis {
   max-width: 18ch;
-  font-size: clamp(1.55rem, 2.1vw, 2.35rem);
+  font-size: clamp(1.45rem, 2vw, 2.2rem);
 }
 
 .proof-index {
@@ -1150,7 +1150,7 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
     font-size: 7.2rem;
   }
   .wordmark { margin-bottom: 1.5rem; }
-  .wordmark span { font-size: clamp(3.6rem, 13vw, 6.8rem); }
+  .wordmark span { font-size: clamp(4.7rem, 16vw, 8rem); }
   .claim-poster,
   .proof-poster { min-height: 32rem; }
   .claim-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1239,7 +1239,7 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
 
 .claim-board .cta-row.intro { animation: none; opacity: 1; transform: none; }
 
-/* HOME final: no large backing board, controlled brand mark */
+/* HOME final: no large backing board, reference hero hierarchy */
 .hero-claim-board .claim-board,
 .hero-claim-board .claim-board-open {
   padding: 0 !important;
@@ -1258,8 +1258,8 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
 }
 
 .hero-claim-board .wordmark {
-  gap: 0.08em;
-  line-height: 0.8;
+  gap: 0.01em;
+  line-height: 0.76;
 }
 
 .hero-claim-board .wordmark span {
