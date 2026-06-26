@@ -682,17 +682,17 @@ h1 {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 0.01em;
+  gap: 0.08em;
   margin: 0;
   font-family: var(--display);
   text-transform: uppercase;
-  line-height: 0.76;
+  line-height: 0.8;
 }
 
 .wordmark span {
   display: block;
   color: var(--paper-hot);
-  font-size: clamp(3.6rem, 11.5vw, 11rem);
+  font-size: clamp(2.8rem, 5.2vw, 6.5rem);
   font-weight: 820;
   font-stretch: 125%;
   font-variation-settings: "wdth" 125, "wght" 820;
@@ -702,6 +702,42 @@ h1 {
 
 .wordmark .labs {
   color: var(--accent);
+}
+
+.home-hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.45fr) minmax(0, 1fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.home-hero-layout::before,
+.home-hero-layout::after {
+  display: none;
+  content: none;
+}
+
+.hero-claim-board .claim-stack {
+  max-width: 56rem;
+  margin-left: auto;
+}
+
+.hero-claim-board .hero-title {
+  max-width: 12ch;
+  font-size: clamp(4.7rem, 7.2vw, 8.4rem);
+  line-height: 0.82;
+}
+
+.hero-claim-board .thesis {
+  max-width: 18ch;
+  font-size: clamp(1.75rem, 2.8vw, 3.1rem);
 }
 
 .proof-index {
@@ -1106,6 +1142,7 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
   .claim-board,
   .proof-board { grid-template-columns: 1fr; }
   .claim-board-open { grid-template-columns: 1fr; }
+  .home-hero-layout { grid-template-columns: 1fr; }
   .claim-stack { grid-template-rows: auto; }
   .claim-wordmark {
     min-height: auto;
@@ -1113,7 +1150,7 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
     font-size: 7.2rem;
   }
   .wordmark { margin-bottom: 1.5rem; }
-  .wordmark span { font-size: clamp(4.7rem, 16vw, 8rem); }
+  .wordmark span { font-size: clamp(2.9rem, 11vw, 5.2rem); }
   .claim-poster,
   .proof-poster { min-height: 32rem; }
   .claim-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1202,7 +1239,7 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
 
 .claim-board .cta-row.intro { animation: none; opacity: 1; transform: none; }
 
-/* HOME final: no large backing board, tight wordmark stack */
+/* HOME final: no large backing board, controlled brand mark */
 .hero-claim-board .claim-board,
 .hero-claim-board .claim-board-open {
   padding: 0 !important;
@@ -1221,8 +1258,8 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
 }
 
 .hero-claim-board .wordmark {
-  gap: 0;
-  line-height: 0.66;
+  gap: 0.08em;
+  line-height: 0.8;
 }
 
 .hero-claim-board .wordmark span {
