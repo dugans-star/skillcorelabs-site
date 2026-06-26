@@ -1202,5 +1202,36 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
 
 .claim-board .cta-row.intro { animation: none; opacity: 1; transform: none; }
 
+/* HOME final: no large backing board, tight wordmark stack */
+.hero-claim-board .claim-board,
+.hero-claim-board .claim-board-open {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.hero-claim-board .claim-board::before,
+.hero-claim-board .claim-board::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}
+
+.hero-claim-board .wordmark {
+  gap: 0;
+  line-height: 0.66;
+}
+
+.hero-claim-board .wordmark span {
+  margin: 0;
+}
+
+.hero-claim-board .wordmark .labs {
+  color: var(--accent) !important;
+}
+
 /* Keep launch/preview captures legible; scroll reveals still handle lower-page motion. */
 .intro { animation: none !important; opacity: 1; transform: none; }
