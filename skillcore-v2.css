@@ -678,6 +678,32 @@ h1 {
   background: rgba(4,4,4,0.34);
 }
 
+.wordmark {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.01em;
+  margin: 0;
+  font-family: var(--display);
+  text-transform: uppercase;
+  line-height: 0.76;
+}
+
+.wordmark span {
+  display: block;
+  color: var(--paper-hot);
+  font-size: clamp(3.6rem, 11.5vw, 11rem);
+  font-weight: 820;
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125, "wght" 820;
+  letter-spacing: 0;
+  text-shadow: 0 2px 26px rgba(0,0,0,0.42);
+}
+
+.wordmark .labs {
+  color: var(--accent);
+}
+
 .proof-index {
   display: block;
   margin-bottom: 0.65rem;
@@ -1086,6 +1112,8 @@ footer { padding-block: 3.2rem 3rem; border-top: 1px solid var(--line); }
     padding-block: 2rem 1rem;
     font-size: 7.2rem;
   }
+  .wordmark { margin-bottom: 1.5rem; }
+  .wordmark span { font-size: clamp(4.7rem, 16vw, 8rem); }
   .claim-poster,
   .proof-poster { min-height: 32rem; }
   .claim-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
