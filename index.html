@@ -513,13 +513,16 @@ footer .wrap{padding:36px var(--g) 28px;display:flex;flex-direction:column;gap:2
     el.dataset.counted='1';
     var target=parseInt(el.dataset.count,10)||0;
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=String(target);return;}
-    var start=performance.now(),dur=1100;
-    function tick(now){
-      var p=Math.min(1,(now-start)/dur),e=1-Math.pow(1-p,3);
-      el.textContent=String(Math.round(target*e)).padStart(3,'0');
-      if(p<1)requestAnimationFrame(tick);else el.textContent=String(target);
-    }
-    requestAnimationFrame(tick);
+    var value=0,stepMs=30;
+    el.textContent='000';
+    var timer=setInterval(function(){
+      value+=1;
+      el.textContent=String(value).padStart(3,'0');
+      if(value>=target){
+        clearInterval(timer);
+        el.textContent=String(target);
+      }
+    },stepMs);
   }
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(entries){
