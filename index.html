@@ -1,217 +1,512 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Skill Core Labs | Evidence Infrastructure for AI Systems</title>
-  <meta name="description" content="Skill Core Labs records AI claims, binds them to evidence, tracks outcomes, and updates trust from what actually happened. Built for AI systems, extensible to markets, science, and creative domains.">
-  <meta name="theme-color" content="#08080A">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Skill Core Labs">
-  <meta property="og:title" content="Skill Core Labs | Evidence Infrastructure for AI Systems">
-  <meta property="og:description" content="Every AI output makes a claim. Skill Core binds the claim to evidence, authority, context, and outcomes so trust can update from reality.">
-  <meta property="og:url" content="https://skillcorelabs.com/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="skillcore-v2.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skill Core Labs | Software, automation and AI agents | New York</title>
+<meta name="description" content="Skill Core Labs builds custom software, workflow automation and AI agents for firms where a wrong answer is expensive. Language models read the input, deterministic code makes the decision, and every run is logged and replayable.">
+<meta name="theme-color" content="#D6D0C5">
+<link rel="canonical" href="https://skillcorelabs.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skill Core Labs">
+<meta property="og:title" content="Skill Core Labs | AI that reads. Code that decides.">
+<meta property="og:description" content="Custom software, automation and AI agents, engineered for work that can’t be wrong. New York City.">
+<meta property="og:url" content="https://skillcorelabs.com/">
+<meta property="og:image" content="https://skillcorelabs.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://skillcorelabs.com/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Skill Core Labs","url":"https://skillcorelabs.com/","email":"hello@skillcorelabs.com","description":"Custom software, workflow automation, AI agents and quantitative validation for firms where a wrong answer is expensive.","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"},"knowsAbout":["Software development","Workflow automation","AI agents","Document automation","Model validation","Backtesting"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,300..900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   Skill Core Labs, single page. No build step, no framework.
+   Design width 1440. Desktop hero (>=1100px) scales with --u = 1% of
+   min(viewport, 1440). Below 1100px everything stacks.
+------------------------------------------------------------------- */
+:root{
+  color-scheme: light;
+  --bg:#D6D0C5; --fg:#121110; --rule:#7B766E; --soft:#3A3834;
+  --paper:#E3DED5; --ghost:#CDC7BB;
+  --accent:#FF4A1C;          /* fills only (card, contact block, small marks) */
+  --accent-text:#B5310C;     /* small red text on putty, 5.5:1 */
+  --accent-large:#D2370F;    /* large red numerals on putty, 3.2:1 */
+  --on-accent:#121110;
+  --g:clamp(16px, 2.3vw, 32px);
+  --u:min(1vw, 14.4px);
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+::selection{background:var(--accent);color:var(--on-accent)}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--fg);color:var(--bg);padding:10px 14px}
+.skip:focus{left:8px}
+.wrap{max-width:1440px;margin-inline:auto}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.micro{font-size:13px;line-height:1.35;font-weight:500}
+.idx{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--accent-text)}
+.soft{color:var(--soft)}
+.h2{font-size:clamp(36px,3.5vw,50px);line-height:1;font-weight:800;letter-spacing:-.035em}
+.arw{display:inline-block;transition:transform .25s var(--ease)}
+a:hover .arw{transform:translate(4px,-4px)}
+.hair{display:grid;gap:1px;background:var(--rule)}
+.hair>*{background:var(--bg)}
+section{border-bottom:1px solid var(--rule)}
+.sec-head{padding:64px var(--g) 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+
+/* ---------------- menu overlay ---------------- */
+.menu{position:fixed;inset:0;z-index:50;background:var(--fg);color:var(--bg);display:flex;flex-direction:column;padding:28px var(--g) 36px}
+.menu[hidden]{display:none}
+.menu-top{display:flex;justify-content:space-between;align-items:center}
+.menu nav{margin-top:auto;display:flex;flex-direction:column}
+.menu nav a{font-size:clamp(40px,7vw,88px);font-weight:800;letter-spacing:-.04em;line-height:1.02;padding:4px 0;border-top:1px solid #3A3834}
+.menu nav a:hover{color:var(--accent)}
+.menu-foot{margin-top:28px;display:flex;justify-content:space-between;gap:16px}
+
+/* ---------------- hero ---------------- */
+.hero{position:relative;overflow:hidden}
+.stage{position:relative;max-width:1440px;margin-inline:auto;height:calc(61.11 * var(--u))}
+.ghost{position:absolute;left:calc(-1.67 * var(--u));top:calc(17.36 * var(--u));font-size:calc(37.5 * var(--u));font-weight:900;letter-spacing:-.04em;line-height:.8;color:var(--ghost);white-space:nowrap;pointer-events:none;user-select:none}
+.menu-btn{position:absolute;left:40px;top:36px;z-index:5;display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:44px}
+.spin{animation:spin 9s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.corner{position:absolute;right:40px;top:36px;width:210px;text-align:right;z-index:5}
+.hl{position:absolute;inset:0;z-index:1;font-size:calc(11.667 * var(--u))}
+.l{position:absolute;display:block;font-weight:800;letter-spacing:-.045em;line-height:.88;white-space:nowrap}
+.l1{left:calc(19.44 * var(--u));top:calc(10.42 * var(--u))}
+.l2{left:calc(32.64 * var(--u));top:calc(20.69 * var(--u))}
+.l3{left:calc(8.33 * var(--u));top:calc(30.97 * var(--u))}
+.l4{left:calc(36.11 * var(--u));top:calc(41.25 * var(--u));font-size:calc(11.667 * var(--u));z-index:3}
+.card{position:absolute;left:calc(59.72 * var(--u));top:calc(22.92 * var(--u));width:calc(26.39 * var(--u));min-height:calc(26.39 * var(--u));z-index:2;background:var(--accent);color:var(--on-accent);padding:calc(2.08 * var(--u));display:flex;flex-direction:column;justify-content:flex-start;gap:20px;transition:transform .5s var(--ease)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.card:hover{transform:rotate(-1.5deg) translateY(-6px)}
+.card-brand{display:flex;align-items:center;gap:8px;font-size:max(13px, calc(1.04 * var(--u)));font-weight:800;letter-spacing:-.01em}
+.card-body{display:flex;flex-direction:column;gap:18px}
+.card-lead{font-size:max(15px, calc(1.32 * var(--u)));line-height:1.32;font-weight:600;letter-spacing:-.01em}
+.card-sub{font-size:max(13.5px, calc(1.04 * var(--u)));line-height:1.45;font-weight:500}
+.card-cta{display:flex;align-items:center;gap:8px;font-size:max(14px, calc(1.04 * var(--u)));font-weight:700;border-bottom:2px solid currentColor;padding-bottom:2px;min-height:30px;white-space:nowrap}
+.bolt{position:absolute;left:calc(83.61 * var(--u));top:calc(33.61 * var(--u));z-index:4;display:flex;align-items:center;gap:16px}
+.bolt-dot{width:calc(5 * var(--u));height:calc(5 * var(--u));min-width:52px;min-height:52px;border-radius:50%;background:var(--fg);color:var(--bg);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s var(--ease)}
+.bolt:hover .bolt-dot{transform:scale(1.08)}
+.bolt-label{font-weight:700;border-bottom:1.5px solid currentColor;padding-bottom:2px;white-space:nowrap}
+.meta{position:absolute;left:40px;bottom:36px;z-index:5;display:flex;align-items:flex-end;gap:56px}
+.meta-year{display:flex;align-items:baseline;gap:10px}
+.meta-year b{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:.9}
+.meta-year i{font-style:normal;font-size:30px;font-weight:300;line-height:.9}
+.scroll{position:absolute;right:40px;bottom:36px;z-index:5;display:flex;align-items:center;gap:12px}
+@media (max-width:1279px){.bolt-label{display:none}}
+@media (min-width:1100px) and (max-width:1279px){.card-sub{display:none}}
+
+/* ---------------- stats ---------------- */
+.stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat{padding:40px var(--g);display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.stat-intro p{font-size:22px;line-height:1.3;font-weight:500;letter-spacing:-.01em}
+.num{font-size:clamp(88px,10.4vw,150px);font-weight:900;font-variation-settings:"wdth" 62;letter-spacing:-.02em;line-height:.8;font-variant-numeric:tabular-nums}
+.num.red{color:var(--accent-large)}
+.stat-cap{display:flex;flex-direction:column;gap:6px}
+
+/* ---------------- capabilities ---------------- */
+.caps{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cap{padding:34px var(--g) 32px;display:flex;flex-direction:column;gap:40px}
+.cap-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cap-title{display:flex;flex-direction:column;gap:10px}
+.cap-title span:last-child{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.cap p{font-size:16px;line-height:1.5}
+.cap .inc{font-size:11px;color:var(--soft);padding-top:14px;border-top:1px solid var(--rule);margin-top:auto;line-height:1.6}
+.glyph{width:80px;height:80px;transition:transform .35s var(--ease)}
+.cap:hover .glyph{transform:rotate(-8deg) scale(1.04)}
+
+/* ---------------- architecture + log ---------------- */
+.arch{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.arch-l{padding:64px 40px 56px var(--g);display:flex;flex-direction:column;gap:28px}
+.arch-l .intro{font-size:17px;line-height:1.55;color:var(--soft);max-width:480px}
+.steps{display:flex;flex-direction:column;border-bottom:1px solid var(--rule)}
+.step{display:grid;grid-template-columns:44px 120px minmax(0,1fr);column-gap:12px;align-items:baseline;padding:18px 0;border-top:1px solid var(--rule)}
+.step:first-child{border-top-color:var(--fg)}
+.arch-r{padding:64px var(--g) 56px 40px;display:flex;flex-direction:column;gap:24px}
+.log{position:relative;overflow:hidden;background:var(--paper);border:1px solid var(--fg);padding:26px 30px;display:flex;flex-direction:column;gap:16px;font-family:var(--mono);font-size:13.5px;line-height:1.6;font-variant-numeric:tabular-nums}
+.log-row{display:flex;justify-content:space-between;gap:16px;font-weight:600}
+.log-kv{display:grid;grid-template-columns:110px minmax(0,1fr);row-gap:2px}
+.log-kv dt{color:var(--soft)}
+.log-kv dd{margin:0}
+.log hr{border:0;border-top:1px solid var(--fg);margin:0}
+.log hr.dash{border-top-style:dashed}
+.log-foot{display:flex;justify-content:space-between;gap:16px;font-size:11.5px;letter-spacing:.06em;color:var(--soft)}
+.scan{position:absolute;left:0;right:0;top:0;height:26px;background:currentColor;opacity:.07;animation:scan 6s cubic-bezier(.45,0,.55,1) infinite;pointer-events:none}
+@keyframes scan{from{transform:translateY(0)}to{transform:translateY(520px)}}
+.stop{color:var(--accent);animation:blink 1.6s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+
+/* ---------------- doctrine ---------------- */
+.doc{grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--rule)}
+.doc>div{padding:30px 28px 40px;display:flex;flex-direction:column;gap:16px}
+.doc h3{font-size:21px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.doc p{font-size:16px;line-height:1.5;color:var(--soft)}
+
+/* ---------------- stack ---------------- */
+.stack{padding:64px var(--g);display:flex;flex-direction:column;gap:32px}
+.rows{display:flex;flex-direction:column;border-bottom:1px solid var(--fg)}
+.row{display:grid;grid-template-columns:60px 300px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:24px 0;border-top:1px solid var(--rule)}
+.row:first-child{border-top-color:var(--fg)}
+.row p{font-size:26px;font-weight:500;letter-spacing:-.015em;line-height:1.28;max-width:900px}
+
+/* ---------------- engagements ---------------- */
+.eng{grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule)}
+.eng>div{padding:30px var(--g) 40px;display:flex;flex-direction:column;gap:16px}
+.eng-top{display:flex;justify-content:space-between;align-items:center}
+.eng h3{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.eng p{font-size:16px;line-height:1.5;color:var(--soft)}
+
+/* ---------------- contact ---------------- */
+.contact{background:var(--accent);color:var(--on-accent);border-bottom:0}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:48px;padding:72px var(--g) 64px;min-height:460px}
+.contact-l{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.contact h2{font-size:clamp(50px,7.64vw,110px);line-height:.9;font-weight:800;letter-spacing:-.045em}
+.contact-r{display:flex;flex-direction:column;justify-content:flex-end;gap:32px}
+.contact-r p{font-size:18px;line-height:1.55;font-weight:500;max-width:440px}
+.mail{font-size:clamp(22px,2.4vw,34px);font-weight:800;letter-spacing:-.025em;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:3px solid currentColor;padding-bottom:8px;min-height:44px}
+.contact .micro a{border-bottom:1.5px solid currentColor}
+
+/* ---------------- footer ---------------- */
+footer .wrap{padding:36px var(--g) 28px;display:flex;flex-direction:column;gap:28px}
+.mark{font-weight:900;letter-spacing:-.02em;line-height:.8;white-space:nowrap}
+.mark-line{font-size:min(calc((100vw - 2 * var(--g)) / 9.46), 145px)}
+.mark-stack{display:none;flex-direction:column;gap:2px;font-size:calc((100vw - 2 * var(--g)) / 3.22)}
+.foot{display:flex;justify-content:space-between;gap:24px;padding-top:16px;border-top:1px solid var(--rule)}
+
+/* ================= responsive ================= */
+@media (max-width:1199px){
+  .doc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .doc>div:last-child{grid-column:1 / -1}
+}
+@media (max-width:1099px){
+  .stage{height:auto;padding:110px var(--g) 28px;display:flex;flex-direction:column}
+  .ghost{left:-3vw;top:38vw;font-size:74vw}
+  .menu-btn{left:var(--g);top:18px}
+  .corner{right:var(--g);top:20px;width:170px;font-size:12px}
+  .hl{position:static;font-size:clamp(52px,16.4vw,128px)}
+  .l{position:static}
+  .l1{margin-left:13.4%}
+  .l2{margin-left:37.4%}
+  .l3{margin-left:0}
+  .l4{position:relative;left:auto;top:auto;margin-left:24.6%;font-size:clamp(52px,16.4vw,128px)}
+  .card{position:relative;left:auto;top:auto;margin-left:auto;width:min(87.7%,440px);min-height:0;aspect-ratio:1/1;margin-top:calc(-.5 * clamp(52px,16.4vw,128px));padding:calc(.5 * clamp(52px,16.4vw,128px) + 16px) 22px 20px}
+  .card-brand{display:none}
+  .card-top{order:2;margin-top:auto}
+  .card-cta{font-size:15px}
+  .card:hover{transform:none}
+  .bolt{position:static;margin:24px 0 0 auto}
+  .bolt-dot{width:52px;height:52px}
+  .bolt-label{display:inline}
+  .meta{position:static;margin-top:44px;justify-content:space-between;gap:16px}
+  .scroll{display:none}
+  .caps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .arch{grid-template-columns:1fr}
+  .arch-l,.arch-r{padding:48px var(--g) 40px}
+  .eng{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:640px) and (max-width:1099px){
+  .card{aspect-ratio:auto;padding-bottom:28px}
+  .card-top{margin-top:28px}
+}
+@media (max-width:899px){
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stat-intro{grid-column:1 / -1}
+  .stat{padding:24px var(--g) 22px;gap:18px}
+  .stat-intro p{font-size:20px}
+  .stat-cap .sub{display:none}
+  .stat-cap .lbl{font-size:10px;line-height:1.45}
+  .num{font-size:min(17vw,150px)}
+  .row{grid-template-columns:36px minmax(0,1fr);row-gap:8px}
+  .row p{grid-column:1 / -1;font-size:19px;line-height:1.32}
+  .contact .wrap{grid-template-columns:1fr;row-gap:28px;padding:44px var(--g) 40px;min-height:0}
+  .contact-l{gap:24px}
+  .sec-head{flex-direction:column;align-items:flex-start;padding:40px var(--g) 20px;gap:10px}
+  .stack{padding:40px var(--g);gap:20px}
+  .mark-line{display:none}
+  .mark-stack{display:flex}
+  .foot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+  .foot>*:nth-child(even){text-align:right}
+}
+@media (max-width:639px){
+  .caps{grid-template-columns:1fr}
+  .cap{padding:26px var(--g) 24px;gap:16px}
+  .cap{position:relative}
+  .cap .glyph{position:absolute;right:var(--g);top:26px;width:48px;height:48px}
+  .cap-top .arw{display:none}
+  .cap .inc{border-top:0;padding-top:0;font-size:10px}
+  .doc{grid-template-columns:1fr}
+  .doc>div{padding:20px var(--g) 22px;gap:10px}
+  .doc h3{font-size:20px}
+  .eng{grid-template-columns:1fr}
+  .eng>div{padding:20px var(--g) 24px;gap:10px}
+  .eng h3{font-size:24px}
+  .step{grid-template-columns:34px minmax(0,1fr);row-gap:6px}
+  .step>span:last-child{grid-column:1 / -1}
+  .log{padding:18px 16px;font-size:11.5px;gap:12px}
+  .log-kv{grid-template-columns:76px minmax(0,1fr)}
+  .log-foot{font-size:10px}
+  .log-foot span:last-child{display:none}
+  .meta-year b{font-size:34px}
+  .meta-year i{font-size:22px}
+  .micro{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .spin,.scan,.stop{animation:none}
+  .card,.arw,.glyph,.bolt-dot{transition:none}
+}
+</style>
 </head>
 <body>
-  <canvas id="field" class="harmonic-field page-field" data-domain="3" aria-hidden="true" tabindex="-1"></canvas>
-  <header class="topbar">
-    <nav class="site-shell nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html"><span class="brand-mark">SC</span><span>Skill Core Labs</span></a>
-      <div class="nav-links">
-        <a aria-current="page" href="index.html">Home</a>
-        <a href="architecture.html">Architecture</a>
-        <a href="products.html">Products</a>
-        <a href="pilot.html">Pilot</a>
-        <a href="index-focused.html">Focused</a>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+  <div class="menu-top">
+    <span class="micro">Skill Core Labs</span>
+    <button type="button" class="micro" id="menu-close" style="min-height:44px">Close ✕</button>
+  </div>
+  <nav aria-label="Sections">
+    <a href="#capabilities">Capabilities</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#doctrine">Doctrine</a>
+    <a href="#stack">Stack</a>
+    <a href="#engagements">Engagements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="menu-foot micro"><span>New York City</span><a href="mailto:hello@skillcorelabs.com">hello@skillcorelabs.com</a></div>
+</div>
+
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="stage">
+    <span class="ghost" aria-hidden="true">SCL</span>
+
+    <button type="button" class="menu-btn" id="menu-open" aria-controls="menu" aria-expanded="false">
+      <svg class="spin" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 1V5M11 17V21M1 11H5M17 11H21M3.9 3.9L6.7 6.7M15.3 15.3L18.1 18.1M3.9 18.1L6.7 15.3M15.3 6.7L18.1 3.9"/></g></svg>
+      <span class="micro">Menu</span>
+    </button>
+
+    <p class="corner micro soft">Software, automation and AI agents for firms where a wrong answer is expensive.</p>
+
+    <h1 class="hl">
+      <span class="l l1">AI that</span>
+      <span class="l l2">reads.</span>
+      <span class="l l3">Code that</span>
+    </h1>
+    <span class="l l4" aria-hidden="true">decides.</span>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-brand"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect width="8" height="8" fill="currentColor"/><rect x="10" width="8" height="8" fill="currentColor"/><rect y="10" width="8" height="8" fill="currentColor"/></svg>Skill Core Labs</span>
+        <a class="card-cta" href="#contact">Start a pilot <span class="arw"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12L12 2M4 2H12V10" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></a>
       </div>
-      <a class="cta" href="pilot.html">Request pilot</a>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero hero-claim-board">
-      <div class="hud" aria-hidden="true">
-        <div>CLAIM FIELD · <b>live</b></div>
-        <div id="hud-line">DOMAIN AI · f 1.60 · HARM 6 · RESOLVED 0 · HORIZON 0.00</div>
+      <div class="card-body">
+        <p class="card-lead">Custom software, automation and AI agents, engineered for work that can’t be wrong.</p>
+        <p class="card-sub">Language models read the input. Deterministic code makes the decision. Every run is logged, hashed and replayable.</p>
       </div>
-      <div class="hero-grid">
-        <div class="home-hero-layout intro d2" aria-label="Skill Core claim field overview">
-          <div class="wordmark" aria-label="Skill Core Labs"><span>Skill</span><span>Core</span><span class="labs">Labs</span></div>
-          <div class="claim-stack">
-            <div class="claim-intro">
-              <p class="eyebrow intro d1">Evidence infrastructure · AI first</p>
-              <h1 class="hero-title">Every AI output is a claim.</h1>
-              <p class="thesis intro d3"><span class="gold">Reality decides</span> what it was worth.</p>
-              <p class="lede intro d4">Skill Core records what an AI system said, what evidence it used, where its authority ended, and what happened after someone acted on it.</p>
-              <div class="cta-row intro d5">
-                <a class="btn" href="pilot.html">Request pilot</a>
-                <a class="btn btn-ghost" href="architecture.html">View architecture <span class="arr">→</span></a>
-              </div>
-            </div>
-            <div class="claim-cards">
-              <article class="claim-card">
-                <span class="proof-index">01</span>
-                <h2>AI</h2>
-                <p>A model answer, agent action, recommendation, or tool call becomes an audit-readable event.</p>
-              </article>
-              <article class="claim-card">
-                <span class="proof-index">02</span>
-                <h2>Markets</h2>
-                <p>A signal or trade thesis can be scored against realized outcome, timing, and drawdown.</p>
-              </article>
-              <article class="claim-card">
-                <span class="proof-index">03</span>
-                <h2>Science</h2>
-                <p>A hypothesis can be tied to methods, sources, replication attempts, and later evidence.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band">
-      <div class="wrap">
-        <div class="reveal">
-          <p class="eyebrow">Built to generalize</p>
-          <h2 class="head">AI is the wedge. Claims are the substrate.</h2>
-          <p class="body-col">Skill Core starts with AI because AI systems generate claims at machine scale. But the record is more basic than AI: claim, evidence, authority, context, outcome, validation, trust update, and failure semantics. That structure works anywhere a claim later meets reality.</p>
-        </div>
-
-        <div class="doms reveal">
-          <div class="dom"><div class="dname">AI</div><div class="dtext"><b>The core market.</b> A model answer, agent action, recommendation, or tool call becomes a claim with evidence, scope, and an outcome trail.</div></div>
-          <div class="dom"><div class="dname">Markets</div><div class="dtext">A signal or trade thesis can be scored against realized P&amp;L, timing, and drawdown.</div></div>
-          <div class="dom"><div class="dname">Science</div><div class="dtext">A hypothesis can be tied to methods, sources, replication attempts, and later evidence.</div></div>
-          <div class="dom"><div class="dname">Creative fields</div><div class="dtext">Art, music, and culture sit together as proof that taste still produces claims: attribution, recommendation, trend call, provenance, retention, and adoption.</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band creative-proof">
-      <div class="wrap">
-        <div class="reveal creative-head">
-          <div>
-            <p class="eyebrow">Creative domains</p>
-            <h2 class="head">One claim surface for taste, provenance, and attention.</h2>
-          </div>
-        </div>
-
-        <div class="proof-board reveal" aria-label="Creative fields claim examples">
-          <div class="proof-poster">
-            <div class="poster-grid" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <div class="poster-top">
-              <span>WORK IN PROGRESS</span>
-              <span>[AI FIRST]</span>
-              <span>CLAIM FIELD 2026</span>
-            </div>
-            <div class="poster-title">Creative<br>Claims</div>
-            <div class="poster-copy">Attribution, recommendation, and trend signals become records instead of vibes.</div>
-            <div class="poster-stamp">Reality decides ↓</div>
-          </div>
-
-          <div class="proof-stack">
-            <article class="proof-card">
-              <span class="proof-index">01</span>
-              <h3>Art</h3>
-              <p>An attribution or provenance claim can be checked against records, ownership, expert review, and later correction.</p>
-            </article>
-            <article class="proof-card">
-              <span class="proof-index">02</span>
-              <h3>Music</h3>
-              <p>A recommendation is a prediction about future attention. Listening behavior, retention, and context become the outcome stream.</p>
-            </article>
-            <article class="proof-card">
-              <span class="proof-index">03</span>
-              <h3>Culture</h3>
-              <p>A trend call can be measured against adoption, persistence, audience shift, and what actually survived the moment.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="wrap"><hr class="hr-horizon"></div>
-
-    <section class="band">
-      <div class="wrap">
-        <div class="reveal">
-          <p class="eyebrow">The operating record</p>
-          <h2 class="head">AI output becomes an audit-readable event.</h2>
-          <p class="body-col">Skill Core keeps the chain intact after the answer was given. The system can later ask whether the claim held, which evidence deserved trust, and where the failure actually happened.</p>
-        </div>
-        <ol class="record reveal">
-          <li class="rec"><span class="idx">01</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Claim</div><p class="desc">The answer, prediction, decision, recommendation, or action the AI system proposed.</p></div><span class="tag">asserted</span></li>
-          <li class="rec"><span class="idx">02</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Evidence</div><p class="desc">The sources, observations, data, tool calls, and reasoning that supported the claim.</p></div><span class="tag">bound</span></li>
-          <li class="rec"><span class="idx">03</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Authority boundary</div><p class="desc">Where the system could act, where review was required, and what context constrained the answer.</p></div><span class="tag">scope</span></li>
-          <li class="rec"><span class="idx">04</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Outcome stream</div><p class="desc">The later events and measurements that make the original output checkable.</p></div><span class="tag">observed</span></li>
-          <li class="rec"><span class="idx">05</span><span class="node" aria-hidden="true"></span><div><div class="ttl">Trust update</div><p class="desc">The evidence-based change in how much this model, source, or workflow deserves weight next time.</p></div><span class="tag">resolved</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <div class="wrap"><hr class="hr-horizon"></div>
-
-    <section class="band">
-      <div class="wrap">
-        <div class="reveal two">
-          <div>
-            <p class="eyebrow">Products</p>
-            <h2 class="head">Evidence infrastructure for AI systems.</h2>
-          </div>
-          <div class="body-col">
-            <p>Five product surfaces, one record. Each writes to and reads from the same evidence layer, so AI systems can remember what they claimed and learn from what happened.</p>
-            <a class="btn btn-ghost" href="products.html">View products <span class="arr">→</span></a>
-          </div>
-        </div>
-        <div class="prod reveal">
-          <div class="prow"><span class="pidx">01</span><span class="pname">Skill Core Memory</span><span class="pdesc">Durable memory of claims, evidence, source quality, and outcomes across sessions.</span></div>
-          <div class="prow"><span class="pidx">02</span><span class="pname">Truth Engine</span><span class="pdesc">Scores what to trust from evidence, contradiction handling, and track record.</span></div>
-          <div class="prow"><span class="pidx">03</span><span class="pname">Model Reality Ledger</span><span class="pdesc">Validation of model outputs against realized outcomes and failure semantics.</span></div>
-          <div class="prow"><span class="pidx">04</span><span class="pname">Certified Skill Calls</span><span class="pdesc">Tool and skill calls that carry their own evidence, inputs, outputs, and authority scope.</span></div>
-          <div class="prow"><span class="pidx">05</span><span class="pname">Agent Governance</span><span class="pdesc">Authority boundaries, escalation, and review gates for agents that act.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band">
-      <div class="wrap reveal">
-        <p class="eyebrow">Pilot</p>
-        <div class="pilot-card">
-          <div class="pilot-grid">
-            <div>
-              <h2 class="head">Put one AI decision loop on record.</h2>
-              <p class="body-col">Pick one workflow where an AI system recommends, acts, or scores. We instrument the claim record end to end and hand back an audit trail your team can actually review.</p>
-              <a class="btn" href="pilot.html">Request pilot</a>
-            </div>
-            <ol class="steps">
-              <li><span class="num">01</span><span class="tick">▸</span>Capture AI claims</li>
-              <li><span class="num">02</span><span class="tick">▸</span>Bind evidence and scope</li>
-              <li><span class="num">03</span><span class="tick">▸</span>Track outcomes</li>
-              <li><span class="num">04</span><span class="tick">▸</span>Update trust</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
-  </main>
-
-  <footer class="footer">
-    <div class="site-shell footer-grid">
-      <div>
-        <a class="brand" href="index.html"><span class="brand-mark">SC</span><span>Skill Core Labs</span></a>
-        <div class="foot-links"><a href="architecture.html">Architecture</a><a href="products.html">Products</a><a href="pilot.html">Pilot</a><a href="index-focused.html">Focused view</a></div>
-      </div>
-      <span>AI evidence infrastructure with a universal claim record underneath.</span>
     </div>
-  </footer>
-  <script src="skillcore-field.js"></script>
+
+    <a class="bolt" href="mailto:hello@skillcorelabs.com?subject=Pilot%20call" aria-label="Book a pilot call">
+      <span class="bolt-dot"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M12 1L4 13H10L9 21L18 8H12Z" fill="currentColor"/></svg></span>
+      <span class="bolt-label micro">Book a pilot call</span>
+    </a>
+
+    <div class="meta">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <span class="micro soft">Clients since</span>
+        <span class="meta-year"><b>2026</b><i>//</i><span class="micro" style="font-weight:700">Skill Core Labs</span></span>
+      </div>
+      <span class="micro" style="font-weight:700;line-height:1.25">Software &amp; AI systems<br>New York City</span>
+    </div>
+
+    <div class="scroll micro soft" aria-hidden="true"><span>Scroll</span><svg width="12" height="16" viewBox="0 0 12 16"><path d="M6 0V14M1 9L6 14L11 9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section aria-label="Operating record">
+  <div class="wrap hair stats">
+    <div class="stat stat-intro">
+      <span class="lbl">Operating record</span>
+      <p>Software and AI systems built for firms in architecture, real estate development, medicine and law.</p>
+    </div>
+    <div class="stat">
+      <span class="num">04</span>
+      <div class="stat-cap"><span class="lbl">Industries served</span><span class="sub soft">Architecture, real estate, medicine, law</span></div>
+    </div>
+    <div class="stat">
+      <span class="num">182</span>
+      <div class="stat-cap"><span class="lbl">Automated checks</span><span class="sub soft">gate a single client release before it ships</span></div>
+    </div>
+    <div class="stat">
+      <span class="num red">0</span>
+      <div class="stat-cap"><span class="lbl">Consequential calls left to a model</span><span class="sub soft">Money, dates, doses and filings run on deterministic code</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section id="capabilities" aria-label="Capabilities">
+  <div class="wrap hair caps">
+    <a class="cap" href="#stack">
+      <span class="cap-top"><span class="cap-title"><span class="idx">01</span><span>Software</span></span><span class="arw"><svg width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12L12 2M4 2H12V10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+      <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M4 12H96V88H4ZM14 34H86V78H14Z"/><circle cx="16" cy="23" r="4" fill="#D6D0C5"/><circle cx="28" cy="23" r="4" fill="#D6D0C5"/></svg>
+      <p>Installable mobile apps and internal platforms engineered around how an operator actually works. Designed, shipped and run in production.</p>
+      <span class="lbl inc">Operator HQs · Scheduling engines · Dashboards</span>
+    </a>
+    <a class="cap" href="#stack">
+      <span class="cap-top"><span class="cap-title"><span class="idx">02</span><span>Automation</span></span><span class="arw"><svg width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12L12 2M4 2H12V10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+      <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12V88M12 50H88" stroke="currentColor" stroke-width="8"/><circle cx="50" cy="50" r="19" fill="currentColor"/><circle cx="50" cy="10" r="10" fill="currentColor"/><circle cx="90" cy="50" r="10" fill="currentColor"/><circle cx="50" cy="90" r="10" fill="currentColor"/><circle cx="10" cy="50" r="10" fill="currentColor"/></svg>
+      <p>Pipelines that ingest documents, messages and forms, apply the firm’s rules, and return filed work, formatted documents and decisions.</p>
+      <span class="lbl inc">Legal documents · Underwriting · Dispatch</span>
+    </a>
+    <a class="cap" href="#stack">
+      <span class="cap-top"><span class="cap-title"><span class="idx">03</span><span>AI agents</span></span><span class="arw"><svg width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12L12 2M4 2H12V10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+      <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><path d="M30 46V32A20 20 0 0 1 70 32V46" fill="none" stroke="currentColor" stroke-width="11"/><path fill-rule="evenodd" fill="currentColor" d="M14 44H86V98H14ZM50 61A9 9 0 1 0 50.01 61Z"/></svg>
+      <p>Agents that operate browsers and desktop software, run research and move data between systems. Private infrastructure, sign-off gates on anything irreversible.</p>
+      <span class="lbl inc">Browser automation · Research pipelines · Self-hosted models</span>
+    </a>
+    <a class="cap" href="#stack">
+      <span class="cap-top"><span class="cap-title"><span class="idx">04</span><span>Quant &amp; validation</span></span><span class="arw"><svg width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12L12 2M4 2H12V10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
+      <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><path d="M8 62H26V92H8ZM34 40H52V92H34ZM60 18H78V92H60Z" fill="currentColor"/><path d="M2 97H98" stroke="currentColor" stroke-width="6"/><circle cx="89" cy="10" r="7" fill="#FF4A1C"/></svg>
+      <p>Backtesting, data-integrity forensics and model validation under pre-registered rules. Evidence before capital.</p>
+      <span class="lbl inc">Backtesting · Data forensics · Model validation</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE ================= -->
+<section id="architecture" aria-labelledby="arch-h">
+  <div class="wrap hair arch">
+    <div class="arch-l">
+      <span class="lbl">The architecture</span>
+      <h2 class="h2" id="arch-h">One architecture. Every system.</h2>
+      <p class="intro">A strict separation of duties between models and code. It’s why the output holds up in front of an attorney, an underwriter or an auditor.</p>
+      <div class="steps">
+        <div class="step"><span class="idx">01</span><span class="lbl">Interpret</span><span>Language models turn filings, statements, voice notes and messages into structured data.</span></div>
+        <div class="step"><span class="idx">02</span><span class="lbl">Decide</span><span>Deterministic, versioned rules make every consequential call. Same input, same answer.</span></div>
+        <div class="step"><span class="idx">03</span><span class="lbl">Verify</span><span>Every run is checked, hashed and logged. Anything ambiguous halts and escalates with a reason.</span></div>
+      </div>
+    </div>
+    <div class="arch-r">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px"><span class="lbl">Sample run log</span><span class="lbl soft">Hash-verified · Replayable</span></div>
+      <div class="log" role="img" aria-label="Sample run log. Run 0412, patent prosecution: 24 of 24 checks passed, response shell sent to attorney queue in 41 seconds. Run 0413, underwriting: one field below confidence threshold, halted before the rules engine and escalated to an underwriter.">
+        <div class="scan" aria-hidden="true"></div>
+        <div class="log-row" style="letter-spacing:.04em"><span>SKILL CORE / RUN LOG</span><span>2026-09-24 · ET</span></div>
+        <hr>
+        <div class="log-row"><span>RUN 0412 · PATENT PROSECUTION</span><span>14:02:11</span></div>
+        <dl class="log-kv" style="margin:0">
+          <dt>SOURCE</dt><dd>Office action, 14 pp · sha256 9f3c…a41e</dd>
+          <dt>EXTRACT</dt><dd>LLM · 37 fields · min confidence 0.97</dd>
+          <dt>DECIDE</dt><dd>Rules engine v3.2 · deterministic</dd>
+          <dt>VERIFY</dt><dd>24 / 24 checks · 0 overrides</dd>
+          <dt>OUTPUT</dt><dd style="font-weight:600">Response shell → attorney queue · 41 s</dd>
+        </dl>
+        <hr class="dash">
+        <div class="log-row"><span>RUN 0413 · UNDERWRITING</span><span>14:06:48</span></div>
+        <dl class="log-kv" style="margin:0">
+          <dt>SOURCE</dt><dd>Bank statements, 6 mo · sha256 07be…19c2</dd>
+          <dt>EXTRACT</dt><dd>LLM · 58 fields · 1 below threshold (0.71 &lt; 0.90)</dd>
+          <dt>DECIDE</dt><dd>Halted before rules engine</dd>
+          <dt>VERIFY</dt><dd>11 / 12 checks</dd>
+          <dt>OUTPUT</dt><dd style="font-weight:600"><span class="stop">■</span> ESCALATED → underwriter, reason attached</dd>
+        </dl>
+        <hr>
+        <div class="log-foot"><span>SOURCE HASH · MODEL · RULES VERSION · CHECKS · OUTCOME</span><span>SAMPLE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCTRINE ================= -->
+<section id="doctrine" aria-labelledby="doc-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2" id="doc-h">Operating doctrine</h2><span class="lbl">Adapted from quantitative research</span></div>
+    <div class="hair doc">
+      <div><span class="idx">01</span><h3>Models interpret. Code decides.</h3><p>Every consequential call runs in deterministic, versioned code.</p></div>
+      <div><span class="idx">02</span><h3>Fail closed.</h3><p>Ambiguity halts the pipeline. The system escalates with a coded reason instead of shipping a plausible error.</p></div>
+      <div><span class="idx">03</span><h3>Replayable by default.</h3><p>Source hash, model, rules version and checks are recorded for every run.</p></div>
+      <div><span class="idx">04</span><h3>Autonomy is earned.</h3><p>Agents unlock authority only against measured reliability. Irreversible actions require sign-off.</p></div>
+      <div><span class="idx">05</span><h3>Pre-registered acceptance.</h3><p>Pass criteria are fixed before the build. Validation runs on held-out data.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section id="stack" aria-labelledby="stack-h">
+  <div class="wrap stack">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap"><h2 class="h2" id="stack-h">Capability stack</h2><span class="lbl">In production and in active development</span></div>
+    <div class="rows">
+      <div class="row"><span class="idx">A</span><span class="lbl" style="font-size:13px">Interfaces</span><p>Installable mobile apps, WhatsApp and Telegram operations, push and email. Deployed where the work already happens.</p></div>
+      <div class="row"><span class="idx">B</span><span class="lbl" style="font-size:13px">Models</span><p>Orchestration across OpenAI, Anthropic and local open-weight models, routed by task and cost.</p></div>
+      <div class="row"><span class="idx">C</span><span class="lbl" style="font-size:13px">Data</span><p>Extraction from PDFs, scans, bank statements, transcripts and market feeds into structured, validated records.</p></div>
+      <div class="row"><span class="idx">D</span><span class="lbl" style="font-size:13px">Infrastructure</span><p>Edge deployment on Cloudflare and Supabase, or fully self-hosted on client hardware inside a private network.</p></div>
+      <div class="row"><span class="idx">E</span><span class="lbl" style="font-size:13px">Assurance</span><p>Automated regression suites, held-out validation sets and hash-verified audit trails.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENGAGEMENTS ================= -->
+<section id="engagements" aria-labelledby="eng-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2" id="eng-h">Engagements</h2><span class="lbl">Every build starts with a paid pilot</span></div>
+    <div class="hair eng">
+      <div><div class="eng-top"><span class="idx">01</span><svg width="44" height="16" viewBox="0 0 44 16" aria-hidden="true"><path d="M0 8H41M34 1L41 8L34 15" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div><h3>Pilot</h3><p>A production-grade first release on one live workflow. Fixed scope, fixed decision date, success criteria agreed up front. Fee credited to the build.</p></div>
+      <div><div class="eng-top"><span class="idx">02</span><svg width="44" height="16" viewBox="0 0 44 16" aria-hidden="true"><path d="M0 8H41M34 1L41 8L34 15" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div><h3>Build</h3><p>Full delivery against the pilot’s acceptance criteria: architecture, integrations, test suites and deployment.</p></div>
+      <div><span class="idx">03</span><h3>Operate</h3><p>Monitoring, maintenance and incident response on a monthly retainer. New scope quoted separately.</p></div>
+      <div><span class="idx" style="color:var(--soft)">+</span><h3>Advisory</h3><p>Architecture and adversarial review for teams putting AI into production.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="contact-l">
+      <span class="lbl">Contact</span>
+      <h2 id="contact-h">Start with one workflow.</h2>
+    </div>
+    <div class="contact-r">
+      <p>Send the process, what goes in, and what a mistake costs. You’ll get a straight answer on feasibility, the architecture, and what a pilot would include.</p>
+      <a class="mail" href="mailto:hello@skillcorelabs.com">hello@skillcorelabs.com <span class="arw"><svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 12L12 2M4 2H12V10" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <p class="mark mark-line" aria-hidden="true">SKILL CORE LABS</p>
+    <p class="mark mark-stack" aria-hidden="true"><span>SKILL</span><span>CORE</span><span>LABS</span></p>
+    <div class="foot micro"><span>© 2026 Skill Core Labs</span><span>New York City</span><a href="mailto:hello@skillcorelabs.com">hello@skillcorelabs.com</a><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var menu=document.getElementById('menu'),open=document.getElementById('menu-open'),close=document.getElementById('menu-close'),last=null;
+  function show(){last=document.activeElement;menu.hidden=false;open.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';close.focus();}
+  function hide(){menu.hidden=true;open.setAttribute('aria-expanded','false');document.body.style.overflow='';if(last&&last.focus)last.focus();}
+  open.addEventListener('click',show);
+  close.addEventListener('click',hide);
+  menu.addEventListener('click',function(e){if(e.target.closest('nav a'))hide();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden)hide();});
+})();
+</script>
 </body>
 </html>
