@@ -349,8 +349,8 @@ footer .wrap{padding:36px var(--g) 28px;display:flex;flex-direction:column;gap:2
       <div class="stat-cap"><span class="lbl">Operating domains</span><span class="sub soft">Custom systems across distinct real-world workflows</span></div>
     </div>
     <div class="stat">
-      <span class="num">334</span>
-      <div class="stat-cap"><span class="lbl">Automated checks</span><span class="sub soft">in a hardened release gate before production</span></div>
+      <span class="num count-up" data-count="334">000</span>
+      <div class="stat-cap"><span class="lbl">Checks in one hardened release gate</span><span class="sub soft">334 / 334 passed before production</span></div>
     </div>
     <div class="stat">
       <span class="num red">0</span>
@@ -506,6 +506,31 @@ footer .wrap{padding:36px var(--g) 28px;display:flex;flex-direction:column;gap:2
   close.addEventListener('click',hide);
   menu.addEventListener('click',function(e){if(e.target.closest('nav a'))hide();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden)hide();});
+
+  var counters=document.querySelectorAll('.count-up');
+  function runCounter(el){
+    if(el.dataset.counted==='1')return;
+    el.dataset.counted='1';
+    var target=parseInt(el.dataset.count,10)||0;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=String(target);return;}
+    var start=performance.now(),dur=1100;
+    function tick(now){
+      var p=Math.min(1,(now-start)/dur),e=1-Math.pow(1-p,3);
+      el.textContent=String(Math.round(target*e)).padStart(3,'0');
+      if(p<1)requestAnimationFrame(tick);else el.textContent=String(target);
+    }
+    requestAnimationFrame(tick);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){runCounter(entry.target);io.unobserve(entry.target);}
+      });
+    },{threshold:.45});
+    counters.forEach(function(el){io.observe(el);});
+  }else{
+    counters.forEach(runCounter);
+  }
 })();
 </script>
 </body>
